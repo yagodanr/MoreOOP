@@ -1,3 +1,5 @@
+package characters;
+import kickStrategy.KickStrategy;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -6,8 +8,11 @@ import lombok.Setter;
 public abstract class Character {
     private int power;
     private int hp;
+    private KickStrategy kickStrategy;
 
-    public abstract void kick(Character c);
+    public void kick(Character c) {
+        kickStrategy.kick(this, c);
+    }
     public boolean isAlive() {
         return hp > 0;
     }
