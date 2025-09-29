@@ -6,10 +6,6 @@ import java.util.Set;
 import org.reflections.Reflections;
 
 import characters.Character;
-import characters.Elf;
-import characters.Hobbit;
-import characters.King;
-import characters.Knight;
 import lombok.SneakyThrows;
 
 
