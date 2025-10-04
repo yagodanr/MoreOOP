@@ -20,7 +20,7 @@ public class CharacterFactory {
     }
 
     @SneakyThrows
-    Character createCharacter() {
+    public static Character createCharacter() {
         return classes.get(rand.nextInt(classes.size())).getConstructor().newInstance();
     }
 }

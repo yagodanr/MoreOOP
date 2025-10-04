@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter @AllArgsConstructor
+@AllArgsConstructor
 public abstract class Character {
+    @Getter @Setter
     private int power;
+    @Getter
     private int hp;
     private KickStrategy kickStrategy;
 
@@ -15,6 +17,14 @@ public abstract class Character {
     }
     public boolean isAlive() {
         return hp > 0;
+    }
+
+    public String toString() {
+        return this.getClass().getSimpleName() + "{hp=" + getHp() + ", power=" + getPower() + "}";
+    }
+
+    public void setHp(int health) {
+        hp = Integer.max(health, 0);
     }
 
 }
